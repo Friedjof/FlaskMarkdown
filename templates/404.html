@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>404 - Seite nicht gefunden</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='404.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navigation.css') }}">
+  </head>
+  <body>
+    {% include 'navigation.html' %}
+    <h1>404 - Seite nicht gefunden</h1>
+    <p>Es tut uns leid, aber die von dir gesuchte Seite konnte nicht gefunden werden. Sie könnte möglicherweise verschoben oder gelöscht worden sein.</p>
+    <p>Aber keine Sorge, es gibt noch viele andere spannende Dinge auf unserer Website zu entdecken. Warum schaust du nicht einfach ein bisschen herum?</p>
+    <p>Oder du könntest auf die Startseite zurückkehren, indem du <a href="/">hier</a> klickst.</p>
+  </body>
+</html>
+

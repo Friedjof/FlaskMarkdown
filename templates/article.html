@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Artikel - {{ article_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='article.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navigation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='markdown/markdown.css') }}">
+    <script src="{{ url_for('static', filename='js/markdown.js') }}"></script>
+  </head>
+  <body>
+    {% include 'navigation.html' %}
+    <div class="article">
+      {{ article_html|safe }}
+    </div>
+  </body>
+</html>

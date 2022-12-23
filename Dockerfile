@@ -9,7 +9,7 @@ COPY requirements.txt /app
 # Install the required python packages
 RUN pip install -r requirements.txt
 
-# Copy the rest of the application code to the working directory
+# Copy the rest of the application code.md to the working directory
 COPY . /app
 
 # Expose the default Flask port

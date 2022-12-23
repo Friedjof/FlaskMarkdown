@@ -1,0 +1,82 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+table th, table td {
+    padding: 8px;
+}
+
+table th {
+    background-color: #999;
+    color: black;
+}
+
+table tr:nth-child(even) {
+    background-color: #333;
+}
+
+table th, table td {
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.codehilite {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.codehilite:hover {
+  -webkit-box-shadow: 0 0 5px 2px rgb(255, 144, 53);
+}
+
+.codehilite .c1, .codehilite .c, .codehilite .cm, .codehilite .w {
+  color: #999;
+}
+
+.codehilite .nb, .codehilite .nt, .codehilite .kd {
+  color: #a9004d;
+  font-weight: bold;
+}
+
+.codehilite .fm, .codehilite .bp {
+  color: #a857ff;
+}
+
+.codehilite .fm {
+  font-weight: bold;
+}
+
+.codehilite .bp {
+  font-style: italic;
+}
+
+.codehilite .k, .codehilite .nx , .codehilite .ow {
+  color: #ff9035;
+  font-weight: bold;
+}
+
+.codehilite .nc, .codehilite .n {
+  color: #d0d0d0;
+  font-weight: bold;
+}
+
+.codehilite .s2, .codehilite .s, .codehilite .kc, .codehilite .l {
+  color: #00b354;
+}
+
+.codehilite .mi {
+  color: #3ca7ff;
+}
+
+.codehilite .gd {
+  color: #a4004b;
+}
+
+.codehilite .gi {
+  color: #009f48;
+  font-weight: bold;
+}
