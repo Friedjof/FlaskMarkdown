@@ -24,13 +24,14 @@ table th, table td {
 }
 
 .codehilite {
+  transition: transform 0.2s ease-in-out;
   background-color: #333;
   border-radius: 10px;
   padding: 10px;
 }
 
 .codehilite:hover {
-  -webkit-box-shadow: 0 0 5px 2px rgb(255, 144, 53);
+    transform: scale(1.01);
 }
 
 .codehilite .c1, .codehilite .c, .codehilite .cm, .codehilite .w {

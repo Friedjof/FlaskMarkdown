@@ -1,4 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
+  addCopyButton();
+  addCollapsibleCodeBlocks();
+});
+
+function addCollapsibleCodeBlocks() {
+  // Finde alle Code-Blöcke im Dokument
+  var codeBlocks = document.querySelectorAll('pre code');
+  // Füge für jeden Code-Block einen Einklapp-Button hinzu
+  codeBlocks.forEach(function(codeBlock) {
+    // Erstelle einen Button
+    var button = document.createElement('button');
+    button.textContent = 'Collapse';
+    // Füge den Button als erstes Kindelement des Code-Blocks hinzu
+    codeBlock.parentNode.insertBefore(button, codeBlock);
+
+    const codeBlockLines = codeBlock.innerText.split('\n');
+    const firstLine = codeBlockLines[0];
+
+    // Der code block Titel ist der erste Teil der ersten Zeile bis zum 20. Zeichen
+    const codeBlockTitle = firstLine.substring(0, 100) + ' […]';
+
+    const codeBlockTitleElement = document.createElement('span');
+    codeBlockTitleElement.textContent = codeBlockTitle;
+    codeBlockTitleElement.classList.add('code-block-title');
+    codeBlockTitleElement.style.display = 'none';
+    codeBlock.parentNode.insertBefore(codeBlockTitleElement, codeBlock);
+
+    // Füge einen Klick-Handler für den Button hinzu
+    button.addEventListener('click', function() {
+      // Wechsle die Sichtbarkeit des Code-Blocks
+      codeBlock.style.display = codeBlock.style.display === 'none' ? 'block' : 'none';
+      // Wechsle den Text des Buttons
+      button.textContent = button.textContent === 'Collapse' ? 'Expand' : 'Collapse';
+      // Zeige den Titel des Code-Blocks an, wenn der Code-Block eingeblendet ist
+      codeBlockTitleElement.style.display = codeBlock.style.display === 'none' ? 'block' : 'none';
+    });
+    // Klick auf den Button Collapse/Expand, wenn der Code-Block mehr als 2 Zeilen hat
+    if (codeBlock.innerText.split('\n').length > 10) {
+      button.click();
+    }
+    // Klick auf den Code-Block-Titel löst ein Klick auf den Collapse/Expand-Button aus
+    codeBlockTitleElement.addEventListener('click', function() {
+      button.click();
+    });
+  });
+}
+
+function addCopyButton() {
   // Finde alle Code-Blöcke im Dokument
   var codeBlocks = document.querySelectorAll('pre code');
   // Füge für jeden Code-Block einen Kopier-Button hinzu
@@ -30,4 +78,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 1000);
     });
   });
-});
+}
